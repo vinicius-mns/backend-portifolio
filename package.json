@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/vinicius-mns/backend-portifolio/issues"
   },
-  "homepage": "https://github.com/vinicius-mns/backend-portifolio#readme"
+  "homepage": "https://github.com/vinicius-mns/backend-portifolio#readme",
+  "dependencies": {
+    "ts-node": "^10.9.1"
+  }
 }
