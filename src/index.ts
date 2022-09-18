@@ -1,9 +1,11 @@
-import express from 'express'
+const express = require('express');
 require('dotenv').config()
 
 const app = express()
 
-app.get('/', (_req, res)=> {
+import {Request, Response} from 'express'
+
+app.get('/', (_req: Request, res: Response)=> {
   res.status(200).json({ok: "funcionando"})
 })
 
