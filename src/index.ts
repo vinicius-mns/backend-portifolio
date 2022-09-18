@@ -6,7 +6,7 @@ const app = express()
 import {Request, Response} from 'express'
 
 app.get('/', (_req: Request, res: Response)=> {
-  res.status(200).json({ok: "funcionando"})
+  res.status(200).json({vinicius: "vinicius"})
 })
 
 app.listen(process.env.PORT, () => {
