@@ -4,7 +4,7 @@ require('dotenv').config()
 const app = express()
 
 app.get('/', (_req, res)=> {
-  res.status(200).json({ok: "funcionou"})
+  res.status(200).json({ok: "funcionando"})
 })
 
 app.listen(process.env.PORT, () => {
