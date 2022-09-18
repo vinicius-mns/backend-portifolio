@@ -8,4 +8,4 @@ RUN npm install
 
 COPY . .
 
-CMD npx tsc src/index.ts ; npm start
+CMD npm start
