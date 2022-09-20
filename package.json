@@ -24,7 +24,8 @@
     "express": "^4.18.1",
     "mongodb": "^4.9.1",
     "nodemon": "^2.0.20",
-    "ts-node": "^10.9.1"
+    "ts-node": "^10.9.1",
+    "zod": "^3.19.1"
   },
   "devDependencies": {
     "@tsconfig/node16": "^1.0.3",
