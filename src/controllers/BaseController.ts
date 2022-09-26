@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { Collection } from "mongodb";
+import { Collection, ObjectId } from "mongodb";
 import { z } from "zod";
 
 class BaseController {
@@ -35,6 +35,21 @@ class BaseController {
       console.log(error)
       return res.status(500).json(error)
     }
+  }
+
+  update = async(req: Request, res: Response) => {
+    const { id } = req.params
+    const body = req.body
+
+    const parsed = this.schema.safeParse(body)
+
+    if (!parsed.success){
+      return res.status(400).json(parsed.error)
+    }
+    
+    const novo = await this.controller.updateOne({_id: new ObjectId(id)}, {$set: body})
+
+    return res.status(200).json(novo)
   }
 }
 
