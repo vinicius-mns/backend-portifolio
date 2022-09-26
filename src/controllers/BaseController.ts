@@ -37,7 +37,7 @@ class BaseController {
     }
   }
 
-  update = async(req: Request, res: Response) => {
+  update = async (req: Request, res: Response) => {
     const { id } = req.params
     const body = req.body
 
@@ -50,6 +50,18 @@ class BaseController {
     const novo = await this.controller.updateOne({_id: new ObjectId(id)}, {$set: body})
 
     return res.status(200).json(novo)
+  }
+
+  delete = async (req: Request, res: Response) => {
+    try {
+      const { id } = req.params
+  
+      this.controller.deleteOne({_id: new ObjectId(id)})
+  
+      return res.status(202).json({message: 'Deleted'})
+    } catch (err) {
+      return res.status(404).json({message: 'Not found'})
+    }
   }
 }
 
