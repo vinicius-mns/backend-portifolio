@@ -6,7 +6,7 @@ class Controller {
   private collection: Collection
   private schema: z.ZodTypeAny
 
-  constructor(collection: Collection, schema: z.ZodTypeAny ) {
+  constructor(collection: Collection, schema: z.ZodTypeAny) {
     this.collection = collection
     this.schema = schema
   }
