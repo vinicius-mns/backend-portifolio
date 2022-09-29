@@ -1,8 +1,8 @@
 import { z } from 'zod'
 
 const img_alt = z.object({
-  image: z.string(),
-  description: z.string()
+  src: z.string(),
+  alt: z.string()
 })
 
 const ProjectSchema = z.object({
@@ -11,7 +11,7 @@ const ProjectSchema = z.object({
   description: z.string(),
   repository: z.string(),
   site: z.string(),
-  // stacks: img_alt.array()
+  stacks: img_alt.array()
 })
 
 export default ProjectSchema
