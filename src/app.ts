@@ -1,6 +1,7 @@
 const express = require('express');
 // import express from 'express'
 import { Router } from "express";
+const cors = require('cors')
 
 require('dotenv').config()
 
@@ -10,6 +11,7 @@ class App {
   constructor(){
     this.app = express()
     this.app.use(express.json())
+    this.app.use(cors({origin: ['https://vinicius-mns.github.io', 'http://localhost:3000']}))
   }
 
   public startServer() {
