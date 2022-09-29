@@ -6,12 +6,12 @@ const img_alt = z.object({
 })
 
 const ProjectSchema = z.object({
-  image: img_alt,
+  // image: img_alt,
   title: z.string(),
-  description: z.string(),
-  github: z.string(),
-  site: z.string(),
-  stacks: img_alt.array()
+  // description: z.string(),
+  // github: z.string(),
+  // site: z.string(),
+  // stacks: img_alt.array()
 })
 
 export default ProjectSchema
