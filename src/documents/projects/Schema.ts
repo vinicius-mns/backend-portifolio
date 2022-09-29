@@ -6,7 +6,7 @@ const img_alt = z.object({
 })
 
 const ProjectSchema = z.object({
-  tamb: img_alt,
+  image: img_alt,
   title: z.string(),
   description: z.string(),
   repository: z.string(),
