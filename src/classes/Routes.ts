@@ -7,11 +7,10 @@ class Routes {
   path: string
   cors: any
 
-  constructor(controller: Controller, path: string, cors: any) {
+  constructor(controller: Controller, path: string) {
     this.router = Router()
     this.controller = controller
     this.path = path
-    this.cors = cors
   }
 
   public addRoute() {
