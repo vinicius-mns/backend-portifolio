@@ -6,3 +6,8 @@ const client = new MongoClient(uri)
 
 const projectsCollection = client.db('portifolio').collection('projetos')
 const iamCollection = client.db('portifolio').collection('iamCollection')
+
+export {
+  projectsCollection,
+  iamCollection,
+}
