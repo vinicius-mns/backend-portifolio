@@ -6,4 +6,4 @@ const client = new MongoClient(uri)
 
 const projectsCollection = client.db('potifolio').collection('projetos')
 
-export default projectsCollection
+const iamCollection = client.db('portifolio').collection('iamCollection')
