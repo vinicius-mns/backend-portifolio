@@ -16,7 +16,6 @@ class BaseRoutes {
   }
 
   public addRoute() {
-    this.router.get('/', (_req, res) => res.status(200).json({message: "on air"}))
     this.router.get(`/${this.path}`, this.controller.readAll)
     this.router.get(`/${this.path}/:id`, this.middle.validId, this.controller.readOne)
     this.router.post(`/${this.path}`, this.middle.validSchema, this.controller.create)
