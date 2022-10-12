@@ -1,5 +1,4 @@
 const express = require('express');
-// import express from 'express'
 import { Router } from "express";
 const cors = require('cors')
 
