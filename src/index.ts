@@ -6,11 +6,12 @@ import routeUser from  "./documents/user"
 const server = new App()
 
 routeProject.addRoute()
-routeIam.addRoute()
-routeUser.addRoute()
-
 server.addRouter(routeProject.router)
+
+routeIam.addRoute()
 server.addRouter(routeIam.router)
+
+routeUser.addRoute()
 server.addRouter(routeUser.router)
 
 server.startServer()
