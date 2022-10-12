@@ -4,10 +4,4 @@ const uri = `mongodb+srv://vinicius:${process.env.PASS}@cluster0.2vla7ld.mongodb
 
 const client = new MongoClient(uri)
 
-const projectsCollection = client.db('portifolio').collection('projetos')
-const iamCollection = client.db('portifolio').collection('iamCollection')
-
-export {
-  projectsCollection,
-  iamCollection,
-}
+export default client
