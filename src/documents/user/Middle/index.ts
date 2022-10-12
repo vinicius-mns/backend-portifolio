@@ -16,8 +16,20 @@ class Middle extends BaseMiddle {
       const { name } = req.body as { name: string }
       const user = await this.service.findUser(name)
       if (user) {
-        return res.status(400).json({message: 'user already exist'})
+        return res.status(406).json({message: 'user already exist'})
       }
+      next()
+    } catch (e) { return res.status(500).json(e) }
+  }
+
+  notSpaces = (req: Request, res: Response, next: NextFunction) => {
+    try {
+      const { name } = req.body as { name: string }
+
+      if( name.includes(' ') ) {
+        return res.status(406).json({message: 'Spaces are not allowed'})
+      }
+
       next()
     } catch (e) { return res.status(500).json(e) }
   }
