@@ -1,12 +1,22 @@
 import { z } from 'zod'
 
-const userSchema = z.object({
+const UserSchema = z.object({
   name: z.string(),
   password: z.string(),
   linkedin: z.string(),
+  adm: z.optional(z.string().or(z.boolean())) ,
 })
 
-export type UserType = z.infer<typeof userSchema>
-export type UserTypeHash = { password: string, adm: boolean }
+export type User = {
+  name: string,
+  password: string,
+  linkedin: string
+  hash: string,
+}
 
-export default userSchema
+export type Hash = {
+  name: string,
+  adm: boolean,
+}
+
+export default UserSchema
