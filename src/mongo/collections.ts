@@ -1,11 +1,11 @@
-import client from "./mongodb";
+import { client } from './client'
 
 const projectsCollection = client.db('portifolio').collection('projetos')
 const iamCollection = client.db('portifolio').collection('iamCollection')
-const usersCollection = client.db('portifolio').collection('users')
+const userCollection = client.db('portifolio').collection('users')
 
 export {
   projectsCollection,
   iamCollection,
-  usersCollection
+  userCollection
 }

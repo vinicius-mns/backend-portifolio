@@ -6,4 +6,4 @@ COPY ./ ./
 
 RUN npm install
 
-CMD npx tsc src/index.ts ; npm start
+CMD npx tsc ; npm start

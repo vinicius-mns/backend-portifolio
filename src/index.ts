@@ -1,17 +1,14 @@
-import App from "./app";
-import routeIam from "./documents/iam";
-import routeProject from "./documents/projects";
-import routeUser from  "./documents/user"
+import express from 'express'
+import dotenv from 'dotenv'
 
-const server = new App()
+dotenv.config()
 
-routeProject.addRoute()
-server.addRouter(routeProject.router)
+const app = express()
 
-routeIam.addRoute()
-server.addRouter(routeIam.router)
+app.get('/user', async (_req, res) => {
+  return res.status(200).json({message: 'ok'})
+})
 
-routeUser.addRoute()
-server.addRouter(routeUser.router)
-
-server.startServer()
+app.listen(process.env.PORT, () => {
+  console.log(`http://localhost:${process.env.PORT}/`)
+})
